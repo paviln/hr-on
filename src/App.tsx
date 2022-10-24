@@ -1,8 +1,16 @@
 import React from 'react';
 import './App.css';
+import Category from './components/Category';
 
 const App = () => {
-  return <h1 className='text-3xl font-bold underline'>Hello world!</h1>;
+  return (
+    <div className='h-screen flex justify-center items-center'>
+      <Category
+        title='SELECT EQUIPMENT'
+        defaultCategory='No equipment selected'
+      ></Category>
+    </div>
+  );
 };
 
 export default App;
