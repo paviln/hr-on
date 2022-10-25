@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import { ButtonProps } from '../../types/props';
 import { BaseButton } from './BaseButton';

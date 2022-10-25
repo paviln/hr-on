@@ -1,4 +1,12 @@
+import { MouseEventHandler, ReactElement } from 'react';
+
 export interface ButtonProps {
-  text: string;
+  isToggled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
+  children?: ReactElement | ReactElement[] | string;
+}
+
+export interface IconProps {
+  fill?: string;
 }

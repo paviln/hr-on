@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import Category from './components/Category';
-
+import CategoryList from './components/Category';
+import { getCategories } from './services/category.service';
+import { Category } from './types/category';
 const App = () => {
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    let result = getCategories();
+    setCategories(result);
+  }, []);
+
+  if (categories.length === 0) {
+    return <div>Loading</div>;
+  }
+
   return (
     <div className='h-screen flex justify-center items-center'>
-      <Category
+      <CategoryList
         title='SELECT EQUIPMENT'
         defaultCategory='No equipment selected'
-      ></Category>
+        items={categories}
+      ></CategoryList>
     </div>
   );
 };

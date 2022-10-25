@@ -10,7 +10,8 @@ module.exports = {
     colors: {
         'primary': '#2A2E35',
         'secondary': '#1A1C20',
-        'white': colors.white
+        'white': colors.white,
+        'sky': '#2A5EF6'
     },
     extend: {
         fontFamily: {

@@ -1,22 +1,21 @@
-import React from 'react';
 import classNames from 'classnames';
-
 import { ButtonProps } from '../../types/props';
 
-export const BaseButton = ({ text, className }: ButtonProps) => {
+export const BaseButton = ({ className, onClick, ...props }: ButtonProps) => {
   var btnClasses = classNames(
     className,
+    'flex-1',
     'py-[13px]',
-    'px-4',
     'text-white',
     'font-sans',
+    'font-sm',
     'text-center',
     'rounded-[5px]'
   );
 
   return (
-    <button type='button' className={btnClasses}>
-      {text}
+    <button type='button' className={btnClasses} onClick={onClick}>
+      {props.children}
     </button>
   );
 };
